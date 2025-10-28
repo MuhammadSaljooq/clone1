@@ -3,8 +3,17 @@ const hamburger = document.getElementById('hamburger') as HTMLButtonElement | nu
 const nav = document.getElementById('nav') as HTMLElement | null;
 
 if (hamburger && nav) {
-  hamburger.addEventListener('click', () => {
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
     nav.classList.toggle('open');
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    const target = e.target as Node;
+    if (target && !hamburger.contains(target) && !nav.contains(target)) {
+      nav.classList.remove('open');
+    }
   });
 }
 
