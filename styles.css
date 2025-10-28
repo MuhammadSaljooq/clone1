@@ -1,0 +1,71 @@
+/* styles for VirtuPro clone */
+:root {
+  --bg: #0b0f1a;
+  --bg-soft: #0f1524;
+  --text: #e7ecf5;
+  --muted: #a8b3c7;
+  --primary: #6aa2ff;
+  --primary-700: #3b82f6;
+  --card: #12182a;
+  --border: #20283c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+.container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.btn { display: inline-block; padding: 12px 18px; border-radius: 10px; border: 1px solid var(--border); color: var(--text); background: transparent; transition: 200ms ease; }
+.btn.primary { background: linear-gradient(180deg, var(--primary), var(--primary-700)); border-color: transparent; color: white; }
+.btn.ghost { background: transparent; }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(59,130,246,.35); }
+
+.site-header { position: sticky; top: 0; z-index: 20; background: rgba(11,15,26,.8); backdrop-filter: saturate(180%) blur(8px); border-bottom: 1px solid var(--border); }
+.site-header .container { display: flex; align-items: center; gap: 16px; padding: 14px 20px; }
+.logo { font-weight: 700; letter-spacing: .5px; }
+.nav { display: flex; gap: 18px; margin-left: auto; }
+.hamburger { display: none; margin-left: 8px; background: transparent; border: 1px solid var(--border); color: var(--text); padding: 8px 10px; border-radius: 8px; }
+
+.hero { padding: 80px 0; background: radial-gradient(1200px 600px at 50% -10%, rgba(106,162,255,.25), transparent), var(--bg); border-bottom: 1px solid var(--border); }
+.hero h1 { font-size: 40px; line-height: 1.1; margin: 0 0 14px; }
+.hero p { max-width: 760px; color: var(--muted); margin: 0 0 22px; }
+.cta-row { display: flex; gap: 12px; }
+
+.integrations { padding: 48px 0; border-bottom: 1px solid var(--border); }
+.integrations h2 { font-size: 20px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
+.integrations .logos { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); margin-top: 14px; }
+
+.value { padding: 64px 0; border-bottom: 1px solid var(--border); }
+.value h2 { font-size: 28px; margin: 0 0 10px; }
+.value p { color: var(--muted); }
+
+.features { padding: 56px 0; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, rgba(16,22,38,.6), rgba(16,22,38,0)); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.features article { background: var(--card); border: 1px solid var(--border); padding: 18px; border-radius: 14px; }
+.features h3 { margin-top: 0; }
+
+.reviews { padding: 56px 0; border-bottom: 1px solid var(--border); }
+.reviews .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.reviews blockquote { margin: 0; background: var(--card); border: 1px solid var(--border); padding: 18px; border-radius: 14px; color: var(--muted); }
+.reviews footer { color: var(--text); margin-top: 8px; font-weight: 600; }
+
+.faq { padding: 56px 0; border-bottom: 1px solid var(--border); }
+.accordion details { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+.accordion summary { cursor: pointer; font-weight: 600; }
+.accordion p { color: var(--muted); margin: 8px 0 0; }
+
+.cta { padding: 64px 0; text-align: center; }
+
+.site-footer { padding: 40px 0; border-top: 1px solid var(--border); color: var(--muted); }
+.site-footer h4 { color: var(--text); margin: 0 0 10px; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+
+@media (max-width: 900px) {
+  .grid-3 { grid-template-columns: 1fr; }
+  .reviews .cards { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .nav { display: none; position: absolute; right: 20px; top: 64px; flex-direction: column; background: var(--card); border: 1px solid var(--border); padding: 10px; border-radius: 12px; }
+  .nav.open { display: flex; }
+  .hamburger { display: inline-block; }
+}
